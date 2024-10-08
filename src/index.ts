@@ -36,8 +36,6 @@ const render = () => {
 	);
 	discovery_element.innerHTML = `[${discoveryPeers.join(", ")}]`;
 
-
-
 	if (!colorCRO) return;
 	console.log(!colorCRO);
 	const paintRed = document.getElementById("paintRed");
@@ -56,11 +54,8 @@ const render = () => {
 	// Here he hashgraph is rendered
 
 	const graph_viz = createGraph();
-
 	const hash_graph = topologyObject.hashGraph;
-
-	console.log(hash_graph.getAllVertices())
-
+	
 	// add nodes to the graph
 	hash_graph.getAllVertices().forEach(vertex => {
 		let colorHex = vertex.operation.value == null ? "#FFFFFF" : vertex.operation.value.toString();
